@@ -5,23 +5,19 @@
   heapifydown th given array
  */
 
- //o(log(n))
-public class a2_removing_root_from_heap {
+ //o(log(n)) is tc on heapify also
+public class a2_extract_minium_without_monu_bhaiya_class {
     public static void main(String[] args) {
         int[] arr = {0, 1, 3, 2, 5, 6, 7, 8, 4};
         int n = arr.length;
         System.out.println("Before removal:");
         printArray(arr, n);
-        arr = removeMin(arr, n);
+        int[] ans  = removeMin(arr, n);
         System.out.println("After removal:");
-        printArray(arr, n - 1);
+        printArray(ans, n - 1);
     }
 
     public static int[] removeMin(int[] arr, int n) {
-        if (n == 0) {
-            throw new IllegalArgumentException("Heap is empty");
-        }
-
         // Replace the root of the heap with the last element
         arr[0] = arr[n - 1];
 
@@ -32,12 +28,7 @@ public class a2_removing_root_from_heap {
         heapify(arr, n, 0);
 
         // Return the array with the reduced size
-        int[] newArr = new int[n];
-        for (int i = 0; i < n; i++) {
-            newArr[i] = arr[i];
-        }
-
-        return newArr;
+        return arr;
     }
 
     public static void heapify(int[] arr, int n, int i) {

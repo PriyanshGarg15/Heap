@@ -19,8 +19,10 @@ public class a3_extract_minimum {
             throw new IllegalStateException("Heap is full");
         }
         heap[size] = element;
+        
+        heapifyUp(size);
+        
         size++;
-        heapifyUp(size - 1);
     }
 
     public int extractMin() {

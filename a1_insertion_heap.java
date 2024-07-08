@@ -1,6 +1,6 @@
-//min heap insertion
-//o(log(n))
-//last meh insert kardo then parent dkehte raho jab tak bada heh swaping
+//we will run insertion for min heap insertion (suppose we will add 0 in heap of 1 2 3 4 5 6 7 8)
+//o(log(n)) is tc to do insertion in heap
+//last meh insert kardo then parent dkehte raho jab tak bada heh keep swapping swaping
 
 
 public class a1_insertion_heap {
@@ -13,10 +13,10 @@ public class a1_insertion_heap {
         System.out.println("Before insertion:");
         printArray(arr, n);
 
-        arr = insertElement(arr, n, element);
+        int[] ans = insertElement(arr, n, element);
 
         System.out.println("After insertion:");
-        printArray(arr, n + 1);
+        printArray(ans, n + 1);
     }
 
     public static int[] insertElement(int[] arr, int n, int element) {
@@ -41,10 +41,10 @@ public class a1_insertion_heap {
         return (i - 1) / 2;
     }
 
-    public static void swap(int[] arr, int i, int j) {
-        int temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
+    public static void swap(int[] newarr, int i, int j) {
+        int temp = newarr[i];
+        newarr[i] = newarr[j];
+        newarr[j] = temp;
     }
 
     public static void printArray(int[] arr, int n) {
