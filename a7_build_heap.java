@@ -1,33 +1,14 @@
 public class a7_build_heap {
 
-        private int[] heap;
-        private int size;
+        public int[] heap;
+        public int size;
     
         public a7_build_heap(int capacity) {
             heap = new int[capacity];
             size = 0;
         }
     
-        public void insert(int element) {
-            if (size == heap.length) {
-                throw new IllegalStateException("Heap is full");
-            }
-            heap[size] = element;
-            size++;
-            heapifyUp(size - 1);
-        }
-    
-    
-        private void heapifyUp(int index) {
-            int parent = (index - 1) / 2;
-            while (index > 0 && heap[parent] > heap[index]) {
-                swap(parent, index);
-                index = parent;
-                parent = (index - 1) / 2;
-            }
-        }
-    
-        private void heapifyDown(int index) {
+        public void heapifyDown(int index) {
             int smallest = index;
             int left = 2 * index + 1;
             int right = 2 * index + 2;
@@ -44,7 +25,7 @@ public class a7_build_heap {
             }
         }
     
-        private void swap(int i, int j) {
+        public void swap(int i, int j) {
             int temp = heap[i];
             heap[i] = heap[j];
             heap[j] = temp;
